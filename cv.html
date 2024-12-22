@@ -88,36 +88,16 @@
     /* Section Styles */
     section {
       padding: 50px 20px;
-      display: none;
+      display: none; /* Initially hidden */
     }
 
     section.active {
-      display: block;
+      display: block; /* Show active section */
     }
 
     .container {
       max-width: 1200px;
       margin: auto;
-    }
-
-    .cv, .blog, .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .cv-item, .blog-post, .photo {
-      flex: 1 1 calc(33.333% - 20px);
-      background: white;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .photo img {
-      width: 100%;
-      border-radius: 5px;
-      height: auto;
     }
 
     footer {
@@ -127,54 +107,72 @@
       padding: 20px;
       margin-top: 40px;
     }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .cv-item, .blog-post, .photo {
-        flex: 1 1 100%;
-      }
-    }
-  </style>
+    
+   /* Responsive Design */
+   @media (max-width: 768px) {
+     .cv-item, .blog-post, .photo {
+       flex-basis: 100%;
+     }
+   }
+  
+   </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="cv.html">CV</a>
-    <a href="blog.html">Blog</a>
-  </nav>
+  
+<nav>
+   <div class="logo">My Portfolio</div>
+   <div class="nav-links">
+     <a href="#cv">CV</a>
+     <a href="#blog">Blog</a>
+     <a href="#gallery">Gallery</a>
+   </div>
+</nav>
 
-  <div id="cv"></div>
+<header>
+   <h1>Welcome to My Personal Website</h1>
+   <p>Your one-stop destination for my CV, blog posts, and gallery.</p>
+</header>
 
-  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-  <script>
-    function CV() {
-      return (
-        <div>
-          <h2>Curriculum Vitae</h2>
-          <div>
-            <h3>Education</h3>
-            <p><strong>University of Example</strong></p>
-            <p>Bachelor's Degree in Computer Science - 2020</p>
-          </div>
-          <div>
-            <h3>Experience</h3>
-            <p><strong>Example Company</strong></p>
-            <p>Software Engineer, 2020–Present</p>
-          </div>
-          <div>
-            <h3>Skills</h3>
-            <ul>
-              <li>Web Development</li>
-              <li>Photography</li>
-              <li>Graphic Design</li>
-            </ul>
-          </div>
-        </div>
-      );
-    }
+<div id="cv"></div>
 
-    ReactDOM.render(<CV />, document.getElementById('cv'));
-  </script>
+<script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script>
+   function CV() {
+     return (
+       <div className="container">
+         <h2>Curriculum Vitae</h2>
+         <div>
+           <h3>Education</h3>
+           <p><strong>University of Example</strong></p>
+           <p>Bachelor's Degree in Computer Science - 2020</p>
+         </div>
+         <div>
+           <h3>Experience</h3>
+           <p><strong>Example Company</strong></p>
+           <p>Software Engineer, 2020–Present</p>
+         </div>
+         <div>
+           <h3>Skills</h3>
+           <ul>
+             <li>Web Development</li>
+             <li>Photography</li>
+             <li>Graphic Design</li>
+           </ul>
+         </div>
+       </div>
+     );
+   }
+
+   // Wait until the DOM is fully loaded before rendering
+   document.addEventListener('DOMContentLoaded', function() {
+     ReactDOM.render(<CV />, document.getElementById('cv'));
+   });
+</script>
+
+<footer>
+   &copy; 2024 My Portfolio
+</footer>
+
 </body>
 </html>
