@@ -1,1 +1,250 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Website</title>
+  <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 10px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background: #333;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .nav-links a:hover {
+      background-color: #555;
+    }
+
+    /* Header Section */
+    header {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #333, #444);
+      color: white;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 1.2em;
+    }
+
+    /* Section Styles */
+    section {
+      padding: 50px 20px;
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .cv, .blog, .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .cv-item, .blog-post, .photo {
+      flex: 1 1 calc(33.333% - 20px);
+      background: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .photo img {
+      width: 100%;
+      border-radius: 5px;
+      height: auto;
+    }
+
+    footer {
+      text-align: center;
+      background: #333;
+      color: white;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .cv-item, .blog-post, .photo {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">My Website</div>
+    <div class="nav-links">
+      <a href="#" data-target="home">Home</a>
+      <a href="#" data-target="cv">CV</a>
+      <a href="#" data-target="blog">Blog</a>
+      <a href="#" data-target="gallery">Gallery</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header id="home">
+    <div>
+      <h1>Welcome to My Website</h1>
+      <p>Explore my CV, blog, and photography work!</p>
+    </div>
+  </header>
+
+  <!-- CV Section -->
+  <section id="cv" class="container">
+    <h2>Curriculum Vitae</h2>
+    <div class="cv">
+      <div class="cv-item">
+        <h3>Education</h3>
+        <p><strong>University of Example</strong></p>
+        <p>Bachelor's Degree in Computer Science - 2020</p>
+      </div>
+      <div class="cv-item">
+        <h3>Experience</h3>
+        <p><strong>Example Company</strong></p>
+        <p>Software Engineer, 2020–Present</p>
+      </div>
+      <div class="cv-item">
+        <h3>Skills</h3>
+        <ul>
+          <li>Web Development</li>
+          <li>Photography</li>
+          <li>Graphic Design</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="container">
+    <h2>Blog</h2>
+    <div class="blog">
+      <div class="blog-post">
+        <h3>Post Title 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel nisi id elit posuere sollicitudin.</p>
+        <a href="#">Read more</a>
+      </div>
+      <div class="blog-post">
+        <h3>Post Title 2</h3>
+        <p>Quisque euismod lacus in mi condimentum, ac porttitor erat mattis.</p>
+        <a href="#">Read more</a>
+      </div>
+      <div class="blog-post">
+        <h3>Post Title 3</h3>
+        <p>Donec sit amet arcu et odio malesuada hendrerit non vel erat.</p>
+        <a href="#">Read more</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="container">
+    <h2>Photography Gallery</h2>
+    <div class="gallery">
+      <div class="photo">
+        <img src="https://via.placeholder.com/300" alt="Photo 1">
+      </div>
+      <div class="photo">
+        <img src="https://via.placeholder.com/300" alt="Photo 2">
+      </div>
+      <div class="photo">
+        <img src="https://via.placeholder.com/300" alt="Photo 3">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // JavaScript for smooth section navigation
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('section');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Hide all sections
+        sections.forEach(section => section.classList.remove('active'));
+        
+        // Show the target section
+        const target = e.target.getAttribute('data-target');
+        document.querySelector(`#${target}`).classList.add('active');
+        
+        // Scroll to top for better user experience
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+
+    // Display the home section by default
+    document.querySelector('#home').classList.add('active');
+  </script>
+</body>
+</html>
