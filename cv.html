@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV - Personal Website</title>
+  <title>Home - Personal Website</title>
   <style>
     /* General Styles */
     * {
@@ -122,10 +122,10 @@
 <nav>
    <div class="logo">My Portfolio</div>
    <div class="nav-links">
-    <a href="./index.html">Home</a>
-    <a href="./cv.html">CV</a>
-    <a href="./blog.html">Blog</a>
-    <a href="./photography.html">Photography</a>
+     <a href="./index.html">Home</a>
+     <a href="./cv.html">CV</a>
+     <a href="./blog.html">Blog</a>
+     <a href="./photography.html">Gallery</a>
    </div>
 </nav>
 
@@ -134,40 +134,23 @@
    <p>Your one-stop destination for my CV, blog posts, and gallery.</p>
 </header>
 
-<div id="cv"></div>
+<div id="home"></div>
 
 <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 <script>
-   function CV() {
+   function Home() {
      return (
        <div className="container">
-         <h2>Curriculum Vitae</h2>
-         <div>
-           <h3>Education</h3>
-           <p><strong>University of Example</strong></p>
-           <p>Bachelor's Degree in Computer Science - 2020</p>
-         </div>
-         <div>
-           <h3>Experience</h3>
-           <p><strong>Example Company</strong></p>
-           <p>Software Engineer, 2020–Present</p>
-         </div>
-         <div>
-           <h3>Skills</h3>
-           <ul>
-             <li>Web Development</li>
-             <li>Photography</li>
-             <li>Graphic Design</li>
-           </ul>
-         </div>
+         <h2>Home</h2>
+         <p>Welcome to my personal website. Here you can find my CV, blog posts, and gallery.</p>
        </div>
      );
    }
 
    // Wait until the DOM is fully loaded before rendering
    document.addEventListener('DOMContentLoaded', function() {
-     ReactDOM.render(<CV />, document.getElementById('cv'));
+     ReactDOM.render(<Home />, document.getElementById('home'));
    });
 </script>
 
