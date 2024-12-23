@@ -95,6 +95,55 @@
       margin: auto;
     }
 
+    .intro {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .intro h2 {
+      font-size: 2.5em;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .intro p {
+      font-size: 1.2em;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .intro .highlight {
+      color: #333;
+      font-weight: bold;
+    }
+
+    .features {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .feature {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      flex: 1 1 30%;
+      text-align: center;
+    }
+
+    .feature h3 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .feature p {
+      font-size: 1em;
+      color: #666;
+    }
+
     footer {
       text-align: center;
       background: #333;
@@ -106,6 +155,15 @@
    /* Responsive Design */
    @media (max-width: 768px) {
      .cv-item, .blog-post, .photo {
+       flex-basis: 100%;
+     }
+
+     .features {
+       flex-direction: column;
+       align-items: center;
+     }
+
+     .feature {
        flex-basis: 100%;
      }
    }
@@ -130,8 +188,24 @@
 </header>
 
 <section class="container">
-  <h2>Home</h2>
-  <p>Welcome to my personal website. Here you can find my CV, blog posts, and gallery.</p>
+  <div class="intro">
+    <h2>About Me</h2>
+    <p>Hello! I'm <span class="highlight">[Your Name]</span>, a passionate <span class="highlight">Software Engineer</span> and <span class="highlight">Photographer</span>. Welcome to my personal website where you can explore my work, read my blog, and view my gallery.</p>
+  </div>
+  <div class="features">
+    <div class="feature">
+      <h3>Curriculum Vitae</h3>
+      <p>Discover my professional journey, education, and skills.</p>
+    </div>
+    <div class="feature">
+      <h3>Blog</h3>
+      <p>Read my latest blog posts on various topics including technology, photography, and more.</p>
+    </div>
+    <div class="feature">
+      <h3>Gallery</h3>
+      <p>Explore my photography work and view my latest projects.</p>
+    </div>
+  </div>
 </section>
 
 <footer>
