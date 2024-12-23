@@ -88,11 +88,6 @@
     /* Section Styles */
     section {
       padding: 50px 20px;
-      display: none; /* Initially hidden */
-    }
-
-    section.active {
-      display: block; /* Show active section */
     }
 
     .container {
@@ -134,25 +129,10 @@
    <p>Your one-stop destination for my CV, blog posts, and gallery.</p>
 </header>
 
-<div id="home"></div>
-
-<script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-<script>
-   function Home() {
-     return (
-       <div className="container">
-         <h2>Home</h2>
-         <p>Welcome to my personal website. Here you can find my CV, blog posts, and gallery.</p>
-       </div>
-     );
-   }
-
-   // Wait until the DOM is fully loaded before rendering
-   document.addEventListener('DOMContentLoaded', function() {
-     ReactDOM.render(<Home />, document.getElementById('home'));
-   });
-</script>
+<section class="container">
+  <h2>Home</h2>
+  <p>Welcome to my personal website. Here you can find my CV, blog posts, and gallery.</p>
+</section>
 
 <footer>
    &copy; 2024 My Portfolio
