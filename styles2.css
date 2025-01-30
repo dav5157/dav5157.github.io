@@ -36,6 +36,44 @@ nav {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.fun-stuff {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+    }
+
+    .project-box {
+    background-color: #f9f9f9; /* Light background for boxes */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 16px; /* Rounded corners */
+    padding: 15px;
+    margin: 10px;
+    width: calc(48% - 20px); /* Two boxes per row with some margin */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-box h3 {
+    font-size: 1.5em; /* Larger font for project title */
+    margin-bottom: 10px;
+    }
+
+    .description {
+    font-size: 1.2em; /* Larger font for description */
+    margin-bottom: 10px;
+    }
+
+    .project-box ul {
+    list-style-type: disc;
+    padding-left: 20px; /* Indent list items */
+    }
+
+    .project-box img {
+    max-width: 100%; /* Responsive images */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 10px; /* Space above images */
+    }
+
 .logo {
     font-size: 1.5em;
     font-weight: bold;
