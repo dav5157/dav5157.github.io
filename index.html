@@ -5,49 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home - Personal Website</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  
-<nav>
-   <div class="logo">My Portfolio</div>
-   <div class="nav-links">
-     <a href="./index.html">Home</a>
-     <a href="./cv.html">CV</a>
-     <a href="./blog.html">Blog</a>
-     <a href="./photography.html">Gallery</a>
-   </div>
-</nav>
-
-<header>
-   <h1>Welcome to ngdavian's Personal Website</h1>
-   <p>Your one-stop destination for my CV, blog posts, and gallery.</p>
-</header>
-
-<section class="container">
-  <div class="intro">
-    <h2>About Me</h2>
-    <p>Hello! I'm <span class="highlight">David</span>, a student at HKUST based in Hong Kong. Welcome to my personal website where you can explore my work, read my blog, and take a peak at my photography</p>
-  </div>
-  <div class="features">
-    <div class="feature">
-      <h3>More About Me</h3>
-      <p>Discover my professional journey, education, and skills.</p>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">My Portfolio</div>
+    <div class="nav-links">
+      <a href="./index.html">Home</a>
+      <a href="./cv.html">CV</a>
+      <a href="./blog.html">Blog</a>
+      <a href="./photography.html">Gallery</a>
     </div>
-    <div class="feature">
-      <h3>Blog</h3>
-      <p>Read my latest blog posts on various topics including technology, photography, and more.</p>
-    </div>
-    <div class="feature">
-      <h3>Gallery</h3>
-      <p>Explore my photography work and view my latest projects.</p>
-    </div>
-    <p>Hope you have a fun time exploring around, my efforts are really to make this site as fun as github allows me to :p.</p>
-  </div>
-</section>
+    <button id="theme-toggle">Toggle Dark Mode</button>
+  </nav>
 
-<footer>
-   &copy; 2024 My Portfolio
-</footer>
+  <!-- Header Section -->
+  <header>
+    <h1>Welcome to ngdavian's Personal Website</h1>
+    <p>Your one-stop destination for my CV, blog posts, and gallery.</p>
+    <!-- Social Icons -->
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/david-ian-ng-46a7b4297" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://www.instagram.com/ngdavian/" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://discord.com/users/your-profile" target="_blank" title="Discord">
+        <i class="fab fa-discord"></i>
+      </a>
+      <a href="https://github.com/your-profile" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="path/to/your-cv.pdf" download title="Download CV">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+    </div>
+  </header>
 
+  <!-- Main Content -->
+  <section class="container">
+    <div class="intro">
+      <h2>About Me</h2>
+      <p>Hello! I'm <span class="highlight">David</span>, a student at HKUST based in Hong Kong. Welcome to my personal website where you can explore my work, read my blog, and take a peek at my photography.</p>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <h3>More About Me</h3>
+        <p>Discover my professional journey, education, and skills.</p>
+      </div>
+      <div class="feature">
+        <h3>Blog</h3>
+        <p>Read my latest blog posts on various topics including technology, photography, and more.</p>
+      </div>
+      <div class="feature">
+        <h3>Gallery</h3>
+        <p>Explore my photography work and view my latest projects.</p>
+      </div>
+      <p>Hope you have a fun time exploring around. My efforts are really to make this site as fun as GitHub allows me to :p.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2024 My Portfolio
+  </footer>
+
+  <!-- JavaScript for Effects -->
+  <script src="scripts.js"></script>
 </body>
 </html>
