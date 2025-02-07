@@ -173,6 +173,26 @@ section {
   transform: translateY(0);
 }
 
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icons a {
+  display: inline-block; /* Ensure the anchor tags are clickable */
+  color: white;
+  font-size: 2em;
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-decoration: none; /* Remove underline */
+}
+
+.social-icons a:hover {
+  color: #ffcc00; /* Change to your preferred hover color */
+  transform: scale(1.2); /* Slightly enlarge the icon on hover */
+}
+
 .intro {
   text-align: center;
   margin-bottom: 40px;

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Personal Website</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  
+<nav>
+   <div class="logo">My Portfolio</div>
+   <div class="nav-links">
+     <a href="/">Home</a>
+     <a href="/cv.html">CV</a>
+     <a href="/blog">Blog</a>
+     <a href="/photography.html">Gallery</a>
+   </div>
+</nav>
+
+<header>
+   <h1>Blog</h1>
+   <p>Read my latest blog posts on various topics including technology, 
+photography, and more.</p>
+</header>
+
+<section class="container">
+  <body>
+    <h1>Latest Posts</h1>
+    <ul>
+        {% for post in site.posts %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
+  </body>
+</section>
+
+</body>
+</html>
