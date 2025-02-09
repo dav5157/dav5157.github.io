@@ -46,3 +46,34 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// Function to check if an image is landscape or portrait
+const checkAspectRatio = (img) => {
+    return img.width > img.height ? 'landscape' : 'portrait';
+  };
+  
+  // Open modal with dynamic image sizing
+  const openModal = (imageSrc) => {
+    const modalContent = document.createElement('div');
+    modalContent.className = 'modal-content';
+  
+    const img = new Image();
+    img.src = imageSrc;
+  
+    img.onload = () => {
+      const aspectRatio = checkAspectRatio(img);
+      img.classList.add(aspectRatio);
+      modalContent.appendChild(img);
+    };
+  
+    const modalBackdrop = document.createElement('div');
+    modalBackdrop.className = 'modal-backdrop';
+    modalBackdrop.appendChild(modalContent);
+  
+    modalBackdrop.onclick = () => {
+      document.body.removeChild(modalBackdrop);
+    };
+  
+    document.body.appendChild(modalBackdrop);
+  };
+  

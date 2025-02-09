@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Personal Website</title>
+  <link rel="stylesheet" href="styles3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background: #333;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      background-color: #555;
+    }
+
+    /* Header Section */
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #333, #444);
+      color: white;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Container Styles */
+    .container {
+      max-width: 1600px;
+      width: 90%;
+      margin: 0 auto;
+      padding: 40px 20px;
+      flex: 1;
+    }
+
+    /* Gallery Styles */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    /* Box Styles */
+    .box {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    /* Modal Styles */
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* Dynamic Image Sizing in Modal */
+    .modal-content img.landscape {
+      width: 100%;
+      height: auto;
+    }
+
+    .modal-content img.portrait {
+      height: 80vh;
+      width: auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">My Portfolio</div>
+    <div class="nav-links">
+      <a href="./index.html">Home</a>
+      <a href="./cv.html">About me</a>
+      <a href="./blog.html">Blog</a>
+      <a href="./photography.html">Gallery</a>
+    </div>
+  </nav>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Photography Gallery</h1>
+    <p>Explore my collection of photographs.</p>
+  </header>
+
+  <!-- Gallery Section -->
+  <section class="container">
+    <div class="gallery">
+      <div class="box" onclick="openModal('assets/DSC_2715.jpg')">
+        <img src="assets/DSC_2715.jpg" alt="DSC 1027">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_2147.jpg')">
+        <img src="assets/DSC_2147.jpg" alt="DSC 1027">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_3055.jpg')">
+        <img src="assets/DSC_3055.jpg" alt="DSC 1004">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_3090.jpg')">
+        <img src="assets/DSC_3090.jpg" alt="DSC 1007">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_3115.jpg')">
+        <img src="assets/DSC_3115.jpg" alt="DSC 1001">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_2338.jpg')">
+        <img src="assets/DSC_2338.jpg" alt="DSC 1001">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_3018.jpg')">
+        <img src="assets/DSC_3018.jpg" alt="DSC 1001">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_2145.jpg')">
+        <img src="assets/DSC_2145.jpg" alt="DSC 1002">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_9170.jpg')">
+        <img src="assets/DSC_9170.jpg" alt="DSC 1005">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_3188.jpg')">
+        <img src="assets/DSC_3188.jpg" alt="DSC 1008">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_1646.jpg')">
+        <img src="assets/DSC_1646.jpg" alt="DSC 1003">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_9610.jpg')">
+        <img src="assets/DSC_9610.jpg" alt="DSC 1006">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_3151.jpg')">
+        <img src="assets/DSC_3151.jpg" alt="DSC 1009">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_3302.jpg')">
+        <img src="assets/DSC_3302.jpg" alt="DSC 1010">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_3055-2.jpg')">
+        <img src="assets/DSC_3055-2.jpg" alt="DSC 1011">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_1880.jpg')">
+        <img src="assets/DSC_1880.jpg" alt="DSC 1012">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_3251.jpg')">
+        <img src="assets/DSC_3251.jpg" alt="DSC 1013">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_2387.jpg')">
+        <img src="assets/DSC_2387.jpg" alt="DSC 1014">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_2440.jpg')">
+        <img src="assets/DSC_2440.jpg" alt="DSC 1015">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_3060.jpg')">
+        <img src="assets/DSC_3060.jpg" alt="DSC 1016">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_2508.jpg')">
+        <img src="assets/DSC_2508.jpg" alt="DSC 1017">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_1636.jpg')">
+        <img src="assets/DSC_1636.jpg" alt="DSC 1018">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_9766.jpg')">
+        <img src="assets/DSC_9766.jpg" alt="DSC 1019">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_9796.jpg')">
+        <img src="assets/DSC_9796.jpg" alt="DSC 1020">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_2743.jpg')">
+        <img src="assets/DSC_2743.jpg" alt="DSC 1021">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_9797.jpg')">
+        <img src="assets/DSC_9797.jpg" alt="DSC 1022">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_2486.jpg')">
+        <img src="assets/DSC_2486.jpg" alt="DSC 1023">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_3138.jpg')">
+        <img src="assets/DSC_3138.jpg" alt="DSC 1024">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_3102-2.jpg')">
+        <img src="assets/DSC_3102-2.jpg" alt="DSC 1025">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_3117.jpg')">
+        <img src="assets/DSC_3117.jpg" alt="DSC 1026">
+      </div>
+      <div class="box" onclick="openModal('assets/DSC_2516.jpg')">
+        <img src="assets/DSC_2516.jpg" alt="DSC 1027">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2024 My Portfolio
+  </footer>
+
+  <!-- Include your JavaScript file -->
+  <script src="scripts.js"></script>
+</body>
+</html>
