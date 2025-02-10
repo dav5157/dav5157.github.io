@@ -1,5 +1,4 @@
-/* General Styles */
-* {
+/* General Styles */* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -16,8 +15,6 @@ body {
   background-color: #f9f9f9;
   transition: background-color 0.3s, color 0.3s;
 }
-
-
 
 body.dark-mode {
   background: #121212;
@@ -69,21 +66,7 @@ nav {
   background-color: #555;
 }
 
-/* styles.css */
-header h1::after {
-  content: "|";
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
-
+/* Theme Toggle Button */
 #theme-toggle {
   background: #555;
   color: white;
@@ -113,10 +96,9 @@ header h1::after {
 }
 
 .social-icons a:hover {
-  color: #ffcc00; /* Change to your preferred hover color */
+  color: #ec2929; /* Change to your preferred hover color */
   transform: scale(1.2); /* Slightly enlarge the icon on hover */
 }
-
 
 /* Header Section */
 header {
@@ -173,26 +155,6 @@ section {
 .container.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-.social-icons {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.social-icons a {
-  display: inline-block; /* Ensure the anchor tags are clickable */
-  color: white;
-  font-size: 2em;
-  transition: color 0.3s ease, transform 0.3s ease;
-  text-decoration: none; /* Remove underline */
-}
-
-.social-icons a:hover {
-  color: #ffcc00; /* Change to your preferred hover color */
-  transform: scale(1.2); /* Slightly enlarge the icon on hover */
 }
 
 .intro {
@@ -275,6 +237,47 @@ footer::before {
   }
 }
 
+/* Project Box Styles */
+.project-box {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 30px; /* Space between each box */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.project-box h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.project-box .description {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.project-box ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.project-box ul li {
+  margin-bottom: 10px;
+}
+
+.project-box img {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .cv-item, .blog-post, .photo {
@@ -289,4 +292,47 @@ footer::before {
   .feature {
     flex-basis: 100%;
   }
+
+  .project-box {
+    margin-bottom: 20px; /* Smaller space on mobile */
+    padding: 15px; /* Slightly smaller padding */
+  }
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 10; /* Ensure buttons are on top */
+}
+.social-button {
+  background-color: #608ca3; /* LinkedIn blue */
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  pointer-events: auto !important; /* Force clickable */
+  opacity: 1 !important; /* Ensure visible */
+  visibility: visible !important; /* Ensure visible */
+}
+.social-button.instagram {
+  background-color: #e4405f; /* Instagram pink */
+}
+.social-button.discord {
+  background-color: #7289da; /* Discord blurple */
+}
+.social-button.github {
+  background-color: #333; /* GitHub black */
+}
+.social-button.cv {
+  background-color: #555; /* CV gray */
+}
+.social-button.email {
+  background-color: #d44638; /* Email red */
+}
+.social-button:hover {
+  opacity: 0.9;
 }
