@@ -1,0 +1,35 @@
+.blog-posts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .post-box {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(33.333% - 40px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .post-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .post-box a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .post-box h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .post-box p {
+    color: #666;
+  }
+  
