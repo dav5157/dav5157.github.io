@@ -243,13 +243,12 @@ nav.scrolled {
 
 /* Default Header (non-homepage pages) */
 header {
-  min-height: 40vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 100px 24px 60px;
+  padding: 80px 24px 32px;
   position: relative;
 }
 
@@ -287,10 +286,188 @@ section.container {
   margin-bottom: 8px;
 }
 
+.cv-page .section-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 18px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text);
+}
+
 .section-subtitle {
   font-size: 0.95rem;
   color: var(--text-light);
   margin-bottom: 40px;
+}
+
+/* Section divider */
+.section-divider {
+  width: 40px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+/* CV page entries */
+.entry {
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.entry:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 2px;
+}
+
+.entry-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.entry-date {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.entry-meta {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 4px;
+}
+
+.entry-detail {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  padding-left: 0;
+  position: relative;
+}
+
+.entry-detail + .entry-detail {
+  margin-top: 1px;
+}
+
+.entry-detail::before {
+  content: "\2022";
+  position: relative;
+  margin-right: 6px;
+  color: var(--text-muted);
+}
+
+.lang-list {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.lang-list span {
+  font-size: 0.88rem;
+  color: var(--text-light);
+}
+
+.lang-list strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.cv-link {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.cv-link:hover {
+  color: var(--accent-hover);
+}
+
+@media (max-width: 768px) {
+  .entry-head {
+    flex-direction: column;
+    gap: 0;
+    align-items: flex-start;
+  }
+}
+
+/* CV page tighter layout */
+.cv-page header {
+  padding: 64px 24px 24px;
+}
+
+.cv-page header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.cv-page .cv-link {
+  font-size: 0.95rem;
+}
+
+.cv-page .container {
+  max-width: 800px;
+}
+
+.cv-page section.container {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.cv-page .fade-in + .fade-in {
+  margin-top: 28px;
+}
+
+/* Group label (homepage experience categories) */
+.group-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin: 36px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.group-label:first-of-type {
+  margin-top: 0;
+}
+
+/* Outline button */
+.btn-outline {
+  display: inline-block;
+  padding: 10px 28px;
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-light);
+  transition: var(--transition);
+}
+
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.text-center {
+  text-align: center;
 }
 
 /* Intro */
@@ -326,6 +503,7 @@ section.container {
   border-radius: var(--radius);
   border: 1px solid var(--border);
   transition: var(--transition);
+  display: block;
 }
 
 .feature:hover {
@@ -343,58 +521,6 @@ section.container {
   font-size: 0.9rem;
   color: var(--text-light);
   line-height: 1.7;
-}
-
-/* Project Box */
-.project-box {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 28px;
-  margin-bottom: 20px;
-  transition: var(--transition);
-}
-
-.project-box:hover {
-  box-shadow: var(--shadow-hover);
-}
-
-.project-box h3 {
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin-bottom: 6px;
-  line-height: 1.4;
-}
-
-.project-box .description {
-  font-size: 0.9rem;
-  color: var(--text-light);
-  margin-bottom: 14px;
-}
-
-.project-box ul {
-  list-style: none;
-  padding: 0;
-}
-
-.project-box ul li {
-  font-size: 0.88rem;
-  color: var(--text-light);
-  padding: 3px 0 3px 18px;
-  position: relative;
-  line-height: 1.6;
-}
-
-.project-box ul li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 13px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--accent);
-  opacity: 0.4;
 }
 
 /* Footer */
@@ -442,10 +568,6 @@ footer {
   section.container {
     padding-top: 40px;
     padding-bottom: 40px;
-  }
-
-  .project-box {
-    padding: 20px;
   }
 
   .features {
@@ -721,6 +843,77 @@ footer {
 
 @media (max-width: 480px) {
   .gallery-grid {
+    column-count: 1;
+  }
+}
+
+/* Snapshots Section */
+.snapshots-section {
+  padding: 0 24px;
+  max-width: 1400px;
+  margin: 0 auto 48px;
+}
+
+.snap-grid {
+  column-count: 5;
+  column-gap: 12px;
+}
+
+.snap-item {
+  break-inside: avoid;
+  margin-bottom: 12px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-alt);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: block;
+}
+
+.snap-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.snap-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.snap-item:hover img {
+  transform: scale(1.06);
+}
+
+@media (max-width: 1200px) {
+  .snap-grid {
+    column-count: 4;
+  }
+}
+
+@media (max-width: 900px) {
+  .snap-grid {
+    column-count: 3;
+    column-gap: 10px;
+  }
+  .snap-item {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .snap-grid {
+    column-count: 2;
+    column-gap: 8px;
+  }
+  .snap-item {
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  .snap-grid {
     column-count: 1;
   }
 }
