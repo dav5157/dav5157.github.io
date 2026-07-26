@@ -1,144 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Personal Website</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>David Ng</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="logo">My Portfolio</div>
-        <div class="nav-links">
-            <a href="./index.html">Home</a>
-            <a href="./cv.html">About me</a>
-            <a href="./blog.html">Blog</a>
-            <a href="./photography.html">Gallery</a>
-        </div>
-        <!--button id="theme-toggle">Toggle Dark Mode</button-->
-    </nav>
+<body class="home-page">
+  <nav>
+    <div class="logo">David Ian Ng</div>
+    <div class="nav-links">
+      <a href="./index.html" class="active">Home</a>
+      <a href="./cv.html">About</a>
+      <a href="./blog.html">Blog</a>
+      <a href="./photography.html">Gallery</a>
+    </div>
+  </nav>
 
-    <!-- Header Section -->
-    <header>
-        <h1>Welcome to ngdavian's Website Portfolio</h1>
-        <p>Your destination to my CV, blog posts, and gallery.</p>
-        <!-- Social Icons -->
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/david-ian-ng-46a7b4297" target="_blank">
-          <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://www.instagram.com/ngdavian/" target="_blank">
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="assets/Photography/Hong Kong/DSC_3805.jpg" alt="">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>David Ian Ng</h1>
+      <p class="tagline">Student at HKUST &mdash; AI &amp; Robotics &middot; Photography</p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/david-ian-ng-46a7b4297" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.instagram.com/ngdavian/" target="_blank" aria-label="Instagram">
           <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.discord.com/ngdavian/" target="_blank">
-          <i class="fab fa-discord"></i>
-            </a>
-            <a href="https://www.github.com/dav5157/" target="_blank">
+        </a>
+        <a href="https://www.github.com/dav5157/" target="_blank" aria-label="GitHub">
           <i class="fab fa-github"></i>
-            </a>
-            <a href="assets/David CV Feb2025-1.pdf" target="_blank">
+        </a>
+        <a href="assets/NG_David_Ian_CV_2026-7.pdf" target="_blank" aria-label="CV">
           <i class="fas fa-file-alt"></i>
-            </a>
-            <a href="mailto:dav055157@gmail.com" target="_blank">
+        </a>
+        <a href="mailto:dav055157@gmail.com" target="_blank" aria-label="Email">
           <i class="fas fa-envelope"></i>
-            </a>
-        </div>
-          </header>
-
-    <!-- Main Content -->
-    <section class="container">
-        <div class="intro">
-            <h2>Home</h2>
-            <p>Hello! I'm <span class="highlight">David</span>, a student at HKUST based in Hong Kong. Welcome to my personal website where you can explore my work, read my blog, and take a peek at my photography.</p>
-        </div>
-        <div class="features">
-            <div class="feature">
-                <h3>More About Me</h3>
-                <p>Discover my professional journey, education, and skills.</p>
-            </div>
-            <div class="feature">
-                <h3>Blog</h3>
-                <p>Read my latest blog posts on various topics including technology, photography, and more.</p>
-            </div>
-            <div class="feature">
-                <h3>Gallery</h3>
-                <p>Explore my photography work and view my latest projects.</p>
-            </div>
-            <p style="margin-bottom: 90px;">Hope you have a fun time exploring around. My efforts are really to make this site as fun as GitHub allows me to :p.</p>
-        </div>
-        <h2>Main Experiences</h2>
-        <div class="fun-stuff">
-          <div class="project-box">
-            <h3>Researcher on AI vision and language-based intelligent control robotics solutions</h3>
-            <p class="description">Currently working with a PHD student under the supervision of Prof. Qiming Shao</p>
-            <ul>
-              <li>Software used: Segment Anything 2, Florence 2, Foundation Pose, Genesis Embodied AI, IsaacSim, IsaacLab, Nvidia Omniverse, OpenUSD, Robot Diffusion Transformer</li>
-              <li>Deploying novel zero-shot object detection to text captioning and segmentation models</li>
-              <li>Testing Reinforcement Learning Environments and synthetic data generation on Genesis, Nvidia IsaacLab, and IsaacSim</li>
-              <li>Researching methodologies for diffusion-based transformers integrating vision and robotic control with natural language prompting</li>
-            </ul>
-            <img src="path/to/image1.jpg" alt="Computer Vision Project" />
-          </div>
-          <div class="project-box">
-            <h3>Internship at Baguio Green Group Limited</h3>
-            <p class="description">Develop software applications to streamline operations, IOT data processing and visualization, object detection and segmentation</p>
-            <ul>
-              <li>Skills used: PowerBI M language, Excel, JS google app scipt, Flask, NextJS, Nodejs API, matplotlib, UNet, Pytorch, YOLO</li>
-              <li>Google form report system on IOT devices maintenance with PowerBI querying and visualization with Excel, google app script, PowerBI M language.</li>
-              <li>Flask Web app for Raw data parsing on IOT devices creating pivot tables and matplotlib visualizations</li>
-              <li>NodeJS Whatsapp web api implementation for scheduling and reporting cases, including real time chat logging and analysis with pivot table.</li>
-              <li>AI Trash classification to recognize fraud in recycling from real time camera images by segmentation and detection with YOLO, UNet, Pytorch</li>
-            </ul>
-            <img src="path/to/image5.jpg" alt="Software development Internship" />
-          </div>
-          <div class="project-box">
-            <h3>HKUST ECE Makerspace Club Founding Member, Director of Internal Development</h3>
-            <p class="description">Founding member of a Departmental Society</p>
-            <ul>
-              <li>Lab redesign and internal development, certain automation and digitalized operations</li>
-              <li>Marketing and outreach initiatives</li>
-              <li>Collaboration with club members and other engineering club members on projects</li>
-            </ul>
-            <img src="path/to/image3.jpg" alt="Makerspace Club" />
-          </div>
-          <div class="project-box">
-            <h3>SIGHT at HKUST Team Project (Sri Lanka)</h3>
-            <p class="description">Consulting and provide digital solutions to a local Sri Lankan textile company</p>
-            <ul>
-              <li>Consulting online and on-site in Sri Lanka to deploy our product</li>
-              <li>Semester-long project consulting and deploying improvements for a Sri Lankan upcycling enterprise with bincoin concept, identified pain points.</li>
-              <li>Improved their ERP workflow efficiency through digital transformation with a cloud-based Airtable database system, designed specific behavioral metrics (responsible consumer index) and loyalty points IBP, to allow better analysis and making data informed business decisions.</li>
-              <li>SIGHT leader, guide future students in the course, improve course teaching.</li>
-            </ul>
-            <img src="path/to/image5.jpg" alt="SIGHT" />
-          </div>
-          <div class="project-box">
-            <h3>Part-time work in Starbucks and Marketplace</h3>
-            <ul>
-              <li>While largely unrelated to my potential future profession, I do believe it was an immensely fruitful experience</li>
-              <li>Hands-on experience in corporate management structures and methods</li>
-              <li>Changed some of my work ethic and world-view</li>
-            </ul>
-          </div>
-          <div class="project-box">
-            <h3>Research experience at the Laboratory for Space Research</h3>
-            <ul>
-              <li>Two-week internship at LSR HKU Cyberport. Worked on a small research project on the size distribution of bipolar and round "Planetary Nebulae" from the HASH PN database.</li>
-            </ul>
-          </div>
-        </div>             
-        </div>
-        </div>
+        </a>
       </div>
-    </section>
+    </div>
+    <div class="hero-scroll">Scroll</div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        &copy; 2024 My Portfolio
-    </footer>
+  <section class="container">
+    <div class="intro fade-in">
+      <p>Hello! I'm <span class="highlight">David</span>, a student at HKUST based in Hong Kong. Welcome to my personal website where you can explore my work, read my blog, and see my photography.</p>
+    </div>
 
-    <script src="scripts.js"></script>
+    <div class="features fade-in">
+      <div class="feature">
+        <h3>About Me</h3>
+        <p>My professional journey, education, and skills in AI, robotics, and software development.</p>
+      </div>
+      <div class="feature">
+        <h3>Blog</h3>
+        <p>Thoughts on technology, AI research, photography, and everything in between.</p>
+      </div>
+      <div class="feature">
+        <h3>Gallery</h3>
+        <p>A curated collection of photographs — moments captured through the lens.</p>
+      </div>
+    </div>
+
+    <h2 class="section-title fade-in">Experience</h2>
+    <p class="section-subtitle fade-in">Research, internships, and projects</p>
+
+    <div class="fade-in">
+      <div class="project-box">
+        <h3>Researcher — AI Vision &amp; Robotics</h3>
+        <p class="description">Working with a PhD student under Prof. Qiming Shao on vision-language intelligent control solutions</p>
+        <ul>
+          <li>Segment Anything 2, Florence 2, Foundation Pose, Genesis Embodied AI, IsaacSim, IsaacLab, Nvidia Omniverse, OpenUSD, Robot Diffusion Transformer</li>
+          <li>Deploying zero-shot object detection to text captioning and segmentation models</li>
+          <li>Testing RL environments and synthetic data generation on Genesis, IsaacLab, and IsaacSim</li>
+          <li>Researching diffusion-based transformers integrating vision and robotic control with natural language prompting</li>
+        </ul>
+      </div>
+
+      <div class="project-box">
+        <h3>Intern — Baguio Green Group Limited</h3>
+        <p class="description">Software applications for operations streamlining, IoT data processing, object detection and segmentation</p>
+        <ul>
+          <li>PowerBI, Excel, Google Apps Script, Flask, NextJS, Node.js, matplotlib, UNet, PyTorch, YOLO</li>
+          <li>Google Form reporting system for IoT maintenance with PowerBI and Excel visualization</li>
+          <li>Flask web app for IoT data parsing with pivot tables and matplotlib visualizations</li>
+          <li>WhatsApp web API integration for scheduling, reporting, and real-time chat logging</li>
+          <li>AI trash classification using YOLO, UNet, PyTorch for recycling fraud detection</li>
+        </ul>
+      </div>
+
+      <div class="project-box">
+        <h3>HKUST ECE Makerspace Club — Founding Member, Director of Internal Development</h3>
+        <p class="description">Founding member of a departmental society</p>
+        <ul>
+          <li>Lab redesign and internal development, automation, and digitalized operations</li>
+          <li>Marketing and outreach initiatives</li>
+          <li>Cross-club collaboration on engineering projects</li>
+        </ul>
+      </div>
+
+      <div class="project-box">
+        <h3>SIGHT at HKUST — Sri Lanka Team Project</h3>
+        <p class="description">Digital solutions consulting for a Sri Lankan textile company</p>
+        <ul>
+          <li>On-site consulting in Sri Lanka to deploy the product</li>
+          <li>Improved ERP workflow efficiency through cloud-based Airtable database system</li>
+          <li>Designed behavioral metrics (Responsible Consumer Index) and loyalty points IBP</li>
+          <li>SIGHT leader, guiding future students in the course</li>
+        </ul>
+      </div>
+
+      <div class="project-box">
+        <h3>Research Intern — Laboratory for Space Research</h3>
+        <ul>
+          <li>Two-week internship at LSR HKU Cyberport. Researched size distribution of bipolar and round Planetary Nebulae from the HASH PN database.</li>
+        </ul>
+      </div>
+
+      <div class="project-box">
+        <h3>Part-time — Starbucks &amp; Marketplace</h3>
+        <ul>
+          <li>Hands-on experience in corporate management structures and methods</li>
+          <li>Changed work ethic and world-view through frontline service</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 David Ng
+  </footer>
+
+  <script src="scripts.js"></script>
 </body>
 </html>

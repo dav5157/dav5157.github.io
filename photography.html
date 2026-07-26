@@ -3,278 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery - Personal Website</title>
-  <link rel="stylesheet" href="styles3.css">
+  <title>Gallery — David Ng</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles-photo.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    /* General Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-    }
-
-    body {
-      font-family: 'Arial', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #f9f9f9;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Navigation Bar */
-    nav {
-      background: #333;
-      color: white;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 10;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .logo {
-      font-size: 1.5em;
-      font-weight: bold;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-    }
-
-    .nav-links a {
-      color: white;
-      padding: 8px 15px;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-
-    .nav-links a:hover, .nav-links a.active {
-      background-color: #555;
-    }
-
-    /* Header Section */
-    header {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: linear-gradient(135deg, #333, #444);
-      color: white;
-      padding: 20px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Container Styles */
-    .container {
-      max-width: 1600px;
-      width: 90%;
-      margin: 0 auto;
-      padding: 40px 20px;
-      flex: 1;
-    }
-
-    /* Gallery Styles */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-
-    /* Box Styles */
-    .box {
-      width: 100%;
-      border-radius: 8px;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      background-color: #f0f0f0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .box:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-
-    /* Modal Styles */
-    .modal-backdrop {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .modal-content {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    /* Dynamic Image Sizing in Modal */
-    .modal-content img.landscape {
-      width: 100%;
-      height: auto;
-    }
-
-    .modal-content img.portrait {
-      height: 80vh;
-      width: auto;
-    }
-  </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
+
+  <div class="grain"></div>
+
   <nav>
-    <div class="logo">My Portfolio</div>
+    <div class="logo">David Ian Ng</div>
     <div class="nav-links">
       <a href="./index.html">Home</a>
-      <a href="./cv.html">About me</a>
+      <a href="./cv.html">About</a>
       <a href="./blog.html">Blog</a>
-      <a href="./photography.html">Gallery</a>
+      <a href="./photography.html" class="active">Gallery</a>
     </div>
   </nav>
 
-  <!-- Header Section -->
-  <header>
-    <h1>Photography Gallery</h1>
-    <p>Explore my collection of photographs.</p>
+  <header class="photo-hero" id="hero">
+    <div class="hero-map-layer" id="hero-map">
+      <svg id="world-map" viewBox="0 0 960 500" preserveAspectRatio="xMidYMid meet" role="img" aria-label="World map showing photography locations"></svg>
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="map-tooltip" id="mapTooltip">
+      <span class="map-tooltip-name" id="mapTooltipName"></span>
+      <span class="map-tooltip-meta" id="mapTooltipMeta"></span>
+    </div>
+    <div class="hero-inner">
+      <span class="eyebrow">2018&ndash;2025</span>
+      <h1>Photography</h1>
+      <p>Every place I've pointed a camera, mapped.</p>
+    </div>
+    <button class="scroll-down" id="scrollDown" aria-label="Scroll to about and contact"><i class="fas fa-chevron-down"></i> <span>About &amp; Contact</span></button>
   </header>
 
-  <!-- Gallery Section -->
   <section class="container">
-    <div><h1>The pictures may take longer :/  Sorry</h1></div>
-    <div class="gallery">
-      <div class="box" onclick="openModal('assets/DSC_2715.jpg')">
-        <img src="assets/DSC_2715.jpg" alt="DSC 1027">
+    <div class="dest-count-bar fade-in">
+      <div class="dest-stat">
+        <div class="num" id="dest-count">32</div>
+        <div class="label">Destinations</div>
       </div>
-      <div class="box" onclick="openModal('assets/DSC_2147.jpg')">
-        <img src="assets/DSC_2147.jpg" alt="DSC 1027">
+      <div class="dest-stat">
+        <div class="num" id="total-photos">163</div>
+        <div class="label">Photos</div>
       </div>
-      <div class="box" onclick="openModal('assets/DSC_3055.jpg')">
-        <img src="assets/DSC_3055.jpg" alt="DSC 1004">
+      <div class="dest-stat">
+        <div class="num" id="countries-count">15</div>
+        <div class="label">Countries</div>
       </div>
-      <div class="box" onclick="openModal('assets/DSC_3090.jpg')">
-        <img src="assets/DSC_3090.jpg" alt="DSC 1007">
+    </div>
+
+    <div id="dest-view">
+      <div class="dest-grid" id="dest-grid"></div>
+    </div>
+
+    <div id="gallery-view" class="hidden">
+      <a href="#" id="back-btn" class="back-link"><i class="fas fa-arrow-left"></i> All destinations</a>
+      <div class="gallery-heading">
+        <h2 class="section-title" id="gallery-title"></h2>
+        <span class="gallery-meta" id="gallery-meta"></span>
       </div>
-      <div class="box" onclick="openModal('assets/DSC_3115.jpg')">
-        <img src="assets/DSC_3115.jpg" alt="DSC 1001">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_2338.jpg')">
-        <img src="assets/DSC_2338.jpg" alt="DSC 1001">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_3018.jpg')">
-        <img src="assets/DSC_3018.jpg" alt="DSC 1001">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_2145.jpg')">
-        <img src="assets/DSC_2145.jpg" alt="DSC 1002">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_9170.jpg')">
-        <img src="assets/DSC_9170.jpg" alt="DSC 1005">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_3188.jpg')">
-        <img src="assets/DSC_3188.jpg" alt="DSC 1008">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_1646.jpg')">
-        <img src="assets/DSC_1646.jpg" alt="DSC 1003">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_9610.jpg')">
-        <img src="assets/DSC_9610.jpg" alt="DSC 1006">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_3151.jpg')">
-        <img src="assets/DSC_3151.jpg" alt="DSC 1009">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_3302.jpg')">
-        <img src="assets/DSC_3302.jpg" alt="DSC 1010">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_3055-2.jpg')">
-        <img src="assets/DSC_3055-2.jpg" alt="DSC 1011">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_1880.jpg')">
-        <img src="assets/DSC_1880.jpg" alt="DSC 1012">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_3251.jpg')">
-        <img src="assets/DSC_3251.jpg" alt="DSC 1013">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_2387.jpg')">
-        <img src="assets/DSC_2387.jpg" alt="DSC 1014">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_2440.jpg')">
-        <img src="assets/DSC_2440.jpg" alt="DSC 1015">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_3060.jpg')">
-        <img src="assets/DSC_3060.jpg" alt="DSC 1016">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_2508.jpg')">
-        <img src="assets/DSC_2508.jpg" alt="DSC 1017">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_1636.jpg')">
-        <img src="assets/DSC_1636.jpg" alt="DSC 1018">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_9766.jpg')">
-        <img src="assets/DSC_9766.jpg" alt="DSC 1019">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_9796.jpg')">
-        <img src="assets/DSC_9796.jpg" alt="DSC 1020">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_2743.jpg')">
-        <img src="assets/DSC_2743.jpg" alt="DSC 1021">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_9797.jpg')">
-        <img src="assets/DSC_9797.jpg" alt="DSC 1022">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_2486.jpg')">
-        <img src="assets/DSC_2486.jpg" alt="DSC 1023">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_3138.jpg')">
-        <img src="assets/DSC_3138.jpg" alt="DSC 1024">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_3102-2.jpg')">
-        <img src="assets/DSC_3102-2.jpg" alt="DSC 1025">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_3117.jpg')">
-        <img src="assets/DSC_3117.jpg" alt="DSC 1026">
-      </div>
-      <div class="box" onclick="openModal('assets/DSC_2516.jpg')">
-        <img src="assets/DSC_2516.jpg" alt="DSC 1027">
+      <div class="gallery-grid gallery-view-enter" id="gallery-grid"></div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-sprockets top" aria-hidden="true"></div>
+    <button class="close-btn" id="closeBtn" aria-label="Close"><i class="fas fa-times"></i></button>
+    <button class="nav-btn prev-btn" id="prevBtn" aria-label="Previous photo"><i class="fas fa-chevron-left"></i></button>
+    <button class="nav-btn next-btn" id="nextBtn" aria-label="Next photo"><i class="fas fa-chevron-right"></i></button>
+    <figure class="lightbox-frame">
+      <img id="lightboxImg" src="" alt="">
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+    <div class="counter" id="counter"></div>
+    <div class="lightbox-sprockets bottom" aria-hidden="true"></div>
+  </div>
+
+  <section class="about-contact" id="about-contact">
+    <div class="container">
+      <div class="about-contact-inner">
+        <div class="about-col">
+          <span class="eyebrow">About</span>
+          <h2>David Ian Ng</h2>
+          <p class="about-tagline">Student at HKUST &mdash; Decision Analytics + Extended Major in AI + Minor in Business</p>
+          <p class="about-text">A curious mind exploring the intersection of artificial intelligence, robotics, and photography. Currently pursuing my BENG at HKUST with an exchange at Lund University, Sweden. My work spans embodied AI research, software engineering, and data analytics &mdash; always with a camera in hand.</p>
+          <div class="about-education">
+            <span><i class="fas fa-graduation-cap"></i> HKUST (2023&ndash;2027)</span>
+            <span><i class="fas fa-globe"></i> Lund University, Sweden (2026)</span>
+          </div>
+          <a href="assets/NG_David_Ian_CV_2026-7.pdf" class="about-cv" target="_blank"><i class="fas fa-file-alt"></i> Download CV</a>
+        </div>
+        <div class="contact-col">
+          <span class="eyebrow">Contact</span>
+          <h2>Get in touch</h2>
+          <div class="contact-links">
+            <a href="mailto:dav055157@gmail.com" target="_blank">
+              <i class="fas fa-envelope"></i>
+              <span>dav055157@gmail.com</span>
+            </a>
+            <a href="https://www.linkedin.com/in/david-ian-ng-46a7b4297" target="_blank">
+              <i class="fab fa-linkedin-in"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://www.instagram.com/ngdavian/" target="_blank">
+              <i class="fab fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+            <a href="https://www.github.com/dav5157/" target="_blank">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+          </div>
+          <p class="contact-location"><i class="fas fa-map-pin"></i> Hong Kong</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
   <footer>
-    &copy; 2024 My Portfolio
+    <span>&copy; 2025 David Ng</span>
+    <span class="footer-dot">&middot;</span>
+    <span>Shot on film &amp; digital</span>
   </footer>
 
-  <!-- Include your JavaScript file -->
   <script src="scripts.js"></script>
 </body>
 </html>

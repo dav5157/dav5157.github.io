@@ -3,45 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog - Personal Website</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>David Ng — Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles-photo.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  
-<nav>
-   <div class="logo">My Portfolio</div>
-   <div class="nav-links">
-     <a href="./index.html">Home</a>
-     <a href="./cv.html">CV</a>
-     <a href="./blog.html">Blog</a>
-     <a href="./photography.html">Gallery</a>
-   </div>
-</nav>
 
-<header>
-   <h1>Blog  (COMING SOON)</h1>
-   <p>Read my latest blog posts on various topics including technology, photography, and more.</p>
-</header>
+  <div class="grain"></div>
 
-<section class="container">
-  <div class="blog">
-    <div class="blog-post">
-      <h3>Post Title 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel nisi id elit posuere sollicitudin.</p>
-      <a href="#">Read more</a>
+  <nav>
+    <div class="logo">David Ian Ng</div>
+    <div class="nav-links">
+      <a href="./index.html">Home</a>
+      <a href="./cv.html">About</a>
+      <a href="./blog.html" class="active">Blog</a>
+      <a href="./photography.html">Gallery</a>
     </div>
-    <div class="blog-post">
-      <h3>Post Title 2</h3>
-      <p>Quisque euismod lacus in mi condimentum, ac porttitor erat mattis.</p>
-      <a href="#">Read more</a>
+  </nav>
+
+  <header class="blog-hero">
+    <div class="hero-inner">
+      <span class="blog-typewriter">_thoughts &amp; field notes</span>
+      <h1>Blog</h1>
+      <p>Thoughts on technology, photography, and everything in between</p>
+      <div class="blog-ink-splash" aria-hidden="true"></div>
     </div>
-  </div>
-</section>
+  </header>
 
-<footer>
-   &copy; 2024 My Portfolio
-</footer>
+  <section class="container">
+    <div class="blog-section-label">Latest</div>
 
+    <div class="blog-status-card fade-in">
+      <div class="status-badge">
+        <span class="pulse-dot"></span>
+        Coming Soon
+      </div>
+      <h2>First posts are on the way</h2>
+      <p>I'm working on my first blog posts covering AI, robotics, photography, and personal reflections. Stay tuned.</p>
+    </div>
+
+    <div class="blog-section-label">Upcoming Topics</div>
+
+    <div class="blog-preview-cards fade-in">
+      <div class="blog-preview-card">
+        <span class="card-icon">&#x1F916;</span>
+        <span class="card-tag">AI &amp; Robotics</span>
+        <h3>Embodied AI: Bridging Vision and Action</h3>
+        <p>Exploring how vision-language models are transforming robot manipulation and what it means for the future of automation.</p>
+        <span class="card-date">Coming soon</span>
+      </div>
+      <div class="blog-preview-card">
+        <span class="card-icon">&#x1F4F7;</span>
+        <span class="card-tag">Photography</span>
+        <h3>Street Photography in Hong Kong</h3>
+        <p>Chasing light and stories through the neon-lit streets of Kowloon — a beginner's journey into urban photography.</p>
+        <span class="card-date">Coming soon</span>
+      </div>
+      <div class="blog-preview-card">
+        <span class="card-icon">&#x1F393;</span>
+        <span class="card-tag">Personal</span>
+        <h3>Exchange in Sweden: Lessons from Lund</h3>
+        <p>Reflections on studying abroad, meeting new people, and discovering the Nordic approach to education and life.</p>
+        <span class="card-date">Coming soon</span>
+      </div>
+    </div>
+
+    <div class="blog-social fade-in">
+      <p>Follow me on social media to get notified when new posts go live.</p>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/ngdavian/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/david-ian-ng-46a7b4297" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <footer>
+    <span>&copy; 2025 David Ng</span>
+    <span class="footer-dot">&middot;</span>
+    <span>Words &amp; code</span>
+  </footer>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
-
