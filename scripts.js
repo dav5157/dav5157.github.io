@@ -139,7 +139,7 @@ function renderDestinations() {
         <span class="corner bl"></span>
         <span class="corner br"></span>
         <span class="dest-frame-no">${d.coords}</span>
-        <img src="${d.cover}" alt="${d.name}, ${d.country}" loading="lazy">
+        <img src="${d.cover}" alt="${d.name}, ${d.country}" loading="lazy" decoding="async">
         <div class="dest-info">
           <h3>${d.name}</h3>
           <div class="meta">
@@ -177,7 +177,7 @@ function openGallery(id) {
     .map(
       (p, i) => `
       <div class="gallery-item" data-index="${i}" tabindex="0" role="button" aria-label="Open photo ${i + 1}">
-        <img src="${p.src}" alt="${p.caption}" loading="lazy">
+        <img src="${p.src}" alt="${p.caption}" loading="lazy" decoding="async">
         <span class="frame-tag">${currentDest.frame}/${String(i + 1).padStart(2, "0")}</span>
       </div>`
     )
